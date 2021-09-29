@@ -1,0 +1,129 @@
+.container {
+  border-style: solid;
+  border-color: #006ec5;
+  border-radius: 10px;
+  border-width: 8px;
+  font-family: "Saira", sans-serif;
+  margin: 0 auto;
+  padding: 0px;
+}
+#city-form {
+  background: #d9edfd;
+  padding: 15px;
+}
+.cityLabel {
+  color: #5a758e;
+  font-size: 20px;
+  display: block;
+  position: relative;
+  top: 4px;
+  text-align: right;
+}
+
+#location-button {
+  position: relative;
+  right: -25px;
+}
+
+#today-date,
+#today-temp,
+#today-temp-tag {
+  margin-left: 420px;
+  position: relative;
+  top: -60px;
+}
+
+#celcius,
+#degree-split,
+#fahrenheight {
+  font-size: 15px;
+  position: relative;
+  bottom: 25px;
+  right: 10px;
+}
+
+#celcius:hover,
+#fahrenheight:hover {
+  cursor: pointer;
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+#today-weather-emoji {
+  position: relative;
+  right: 15px;
+}
+#today-date {
+  color: #48aff6;
+  font-size: 20px;
+}
+#today-temp {
+  color: #006ec5;
+  font-size: 50px;
+  font-weight: bold;
+}
+#today-temp-tag {
+  font-size: 15px;
+}
+#today-temp-tag {
+  color: #68ccc5;
+}
+h1,
+.weeklyForecast {
+  margin: auto;
+  padding-top: 30px;
+}
+.weeklyForecast {
+  color: #006ec5;
+  font-size: 25px;
+  font-weight: bold;
+  position: relative;
+  left: 70px;
+  bottom: 50px;
+}
+.weekDays,
+.weatherIcons,
+.weeklyTemp,
+.weeklyTags {
+  margin: 0px 10px 0px 10px;
+  padding: 10px 20px;
+  position: relative;
+  bottom: 30px;
+  text-align: center;
+}
+.weekDays {
+  background: #d9edfd;
+  border-style: solid;
+  border-color: #48aff6;
+  border-radius: 10px;
+  border-width: 5px;
+  color: #006ec5;
+  font-weight: bold;
+}
+.fas {
+  border-style: solid;
+  border-color: #d1f0ee;
+  border-radius: 100px;
+  border-width: 5px;
+  color: #006ec5;
+  font-size: 30px;
+  padding: 20px;
+}
+.weeklyTemp {
+  color: #5a758e;
+  font-size: 25px;
+}
+.weeklyTags {
+  color: #48aff6;
+  font-size: 12px;
+}
+body {
+  margin: auto 200px auto 200px;
+}
+h1 {
+  color: #5a758e;
+  font-size: 55px;
+  font-weight: bold;
+  position: relative;
+  left: 60px;
+}
