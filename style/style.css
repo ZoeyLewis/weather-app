@@ -127,3 +127,9 @@ h1 {
   position: relative;
   left: 60px;
 }
+footer,
+.openSourceFooter {
+  color: #006ec5;
+  font-family: "Saira", sans-serif;
+  text-decoration: none;
+}
