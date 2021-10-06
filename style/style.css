@@ -29,7 +29,7 @@
 #today-temp,
 #today-temp-tag,
 .humidity,
-#wind-speed {
+.windSpeed {
   margin-left: 420px;
   position: relative;
   top: -60px;
@@ -66,7 +66,7 @@
 }
 #today-temp-tag,
 .humidity,
-#wind-speed {
+.windSpeed {
   color: #68ccc5;
   font-size: 15px;
 }

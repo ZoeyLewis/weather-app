@@ -53,6 +53,8 @@ function changeCelciusTempValue(response) {
   weatherDescription.innerHTML = response.data.weather[0].main;
   let humidity = document.querySelector("#humidity-value");
   humidity.innerHTML = response.data.main.humidity;
+  let windSpeed = document.querySelector("#wind-speed-value");
+  windSpeed.innerHTML = response.data.wind.speed;
 }
 
 function changeFahrenheitTempValue(response) {
@@ -63,6 +65,8 @@ function changeFahrenheitTempValue(response) {
   weatherDescription.innerHTML = response.data.weather[0].main;
   let humidity = document.querySelector("#humidity-value");
   humidity.innerHTML = response.data.main.humidity;
+  let windSpeed = document.querySelector("#wind-speed-value");
+  windSpeed.innerHTML = response.data.wind.speed;
 }
 function getCelciusWeatherAPI(event) {
   let city = document.querySelector("#city-search-input").value;
@@ -97,6 +101,8 @@ function showCurrentLocationWeather(response) {
   weatherDescription.innerHTML = response.data.weather[0].main;
   let humidity = document.querySelector("#humidity-value");
   humidity.innerHTML = response.data.main.humidity;
+  let windSpeed = document.querySelector("#wind-speed-value");
+  windSpeed.innerHTML = response.data.wind.speed;
 }
 
 function getAPILocation(position) {
