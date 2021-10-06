@@ -50,8 +50,9 @@ function changeCelciusTempValue(response) {
   let tempValue = document.querySelector("#degrees");
   tempValue.innerHTML = temperature;
   let weatherDescription = document.querySelector("#today-temp-tag");
-  weatherDescription.innerHTML =
-    response.data.weather[0].description.toUpperCase();
+  weatherDescription.innerHTML = response.data.weather[0].main;
+  let humidity = document.querySelector("#humidity-value");
+  humidity.innerHTML = response.data.main.humidity;
 }
 
 function changeFahrenheitTempValue(response) {
@@ -59,8 +60,9 @@ function changeFahrenheitTempValue(response) {
   let tempValue = document.querySelector("#degrees");
   tempValue.innerHTML = temperature;
   let weatherDescription = document.querySelector("#today-temp-tag");
-  weatherDescription.innerHTML =
-    response.data.weather[0].description.toUpperCase();
+  weatherDescription.innerHTML = response.data.weather[0].main;
+  let humidity = document.querySelector("#humidity-value");
+  humidity.innerHTML = response.data.main.humidity;
 }
 function getCelciusWeatherAPI(event) {
   let city = document.querySelector("#city-search-input").value;
@@ -92,8 +94,9 @@ function showCurrentLocationWeather(response) {
   let tempValue = document.querySelector("#degrees");
   tempValue.innerHTML = temperature;
   let weatherDescription = document.querySelector("#today-temp-tag");
-  weatherDescription.innerHTML =
-    response.data.weather[0].description.toUpperCase();
+  weatherDescription.innerHTML = response.data.weather[0].main;
+  let humidity = document.querySelector("#humidity-value");
+  humidity.innerHTML = response.data.main.humidity;
 }
 
 function getAPILocation(position) {

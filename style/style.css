@@ -28,7 +28,7 @@
 #today-date,
 #today-temp,
 #today-temp-tag,
-#humidity,
+.humidity,
 #wind-speed {
   margin-left: 420px;
   position: relative;
@@ -65,7 +65,7 @@
   font-weight: bold;
 }
 #today-temp-tag,
-#humidity,
+.humidity,
 #wind-speed {
   color: #68ccc5;
   font-size: 15px;
@@ -126,6 +126,7 @@ body {
 h1 {
   color: #5a758e;
   font-size: 55px;
+  font-size: 3.5vw;
   font-weight: bold;
   position: relative;
   left: 60px;
