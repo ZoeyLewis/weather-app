@@ -27,7 +27,9 @@
 
 #today-date,
 #today-temp,
-#today-temp-tag {
+#today-temp-tag,
+#humidity,
+#wind-speed {
   margin-left: 420px;
   position: relative;
   top: -60px;
@@ -62,12 +64,13 @@
   font-size: 50px;
   font-weight: bold;
 }
-#today-temp-tag {
+#today-temp-tag,
+#humidity,
+#wind-speed {
+  color: #68ccc5;
   font-size: 15px;
 }
-#today-temp-tag {
-  color: #68ccc5;
-}
+
 h1,
 .weeklyForecast {
   margin: auto;
