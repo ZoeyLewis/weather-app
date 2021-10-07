@@ -55,6 +55,11 @@ function changeCelciusTempValue(response) {
   humidity.innerHTML = response.data.main.humidity;
   let windSpeed = document.querySelector("#wind-speed-value");
   windSpeed.innerHTML = response.data.wind.speed;
+  let weatherIcon = document.querySelector("#today-weather-emoji");
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function changeFahrenheitTempValue(response) {
@@ -67,6 +72,11 @@ function changeFahrenheitTempValue(response) {
   humidity.innerHTML = response.data.main.humidity;
   let windSpeed = document.querySelector("#wind-speed-value");
   windSpeed.innerHTML = response.data.wind.speed;
+  let weatherIcon = document.querySelector("#today-weather-emoji");
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 function getCelciusWeatherAPI(event) {
   let city = document.querySelector("#city-search-input").value;
@@ -103,6 +113,11 @@ function showCurrentLocationWeather(response) {
   humidity.innerHTML = response.data.main.humidity;
   let windSpeed = document.querySelector("#wind-speed-value");
   windSpeed.innerHTML = response.data.wind.speed;
+  let weatherIcon = document.querySelector("#today-weather-emoji");
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function getAPILocation(position) {
