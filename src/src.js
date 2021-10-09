@@ -83,6 +83,18 @@ function getLocation(event) {
   navigator.geolocation.getCurrentPosition(getAPILocation);
 }
 
+function search(city) {
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(changeCelciusTempValue);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-search-input");
+  search(cityInputElement.value);
+}
+
 let currentDateTime = document.querySelector("#today-date");
 let now = new Date();
 let days = [
@@ -124,8 +136,8 @@ if (minute < 10) {
 currentDateTime.innerHTML = `${weekDay}  ${month}  ${date}  ${year}  ${hour}:${minute}`;
 
 let citySearch = document.querySelector("#city-form");
+citySearch.addEventListener("submit", handleSubmit);
 citySearch.addEventListener("submit", changeCityName);
-citySearch.addEventListener("submit", getCelciusWeatherAPI);
 
 let celciusButton = document.querySelector("#celcius");
 celciusButton.addEventListener("click", getCelciusWeatherAPI);
@@ -135,3 +147,5 @@ fahrenheightButton.addEventListener("click", getFahrenheitWeatherAPI);
 
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", getLocation);
+
+search("New York");
