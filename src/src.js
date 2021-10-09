@@ -1,11 +1,47 @@
-function changeCityName(event) {
-  event.preventDefault();
-  let searchValue = document.querySelector("#city-search-input");
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = `${searchValue.value.toUpperCase()}`;
+function formatDate(timestamp) {
+  let now = new Date(timestamp);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let weekDay = days[now.getDay()];
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  let month = months[now.getMonth()];
+  let date = now.getDate();
+  let year = now.getFullYear();
+  let hour = now.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  let minute = now.getMinutes();
+  if (minute < 10) {
+    minute = `0${minute}`;
+  }
+  return `${weekDay}  ${month}  ${date}  ${year}  ${hour}:${minute}`;
 }
 
-function displayCelciusTemp(response) {
+function displayTemperature(response) {
+  let h1 = document.querySelector("h1");
+  h1.innerHTML = response.data.name.toUpperCase();
   celciusTemperature = Math.round(response.data.main.temp);
   let tempValue = document.querySelector("#degrees");
   tempValue.innerHTML = celciusTemperature;
@@ -15,6 +51,8 @@ function displayCelciusTemp(response) {
   humidity.innerHTML = response.data.main.humidity;
   let windSpeed = document.querySelector("#wind-speed-value");
   windSpeed.innerHTML = response.data.wind.speed;
+  let date = document.querySelector("#today-date");
+  date.innerHTML = formatDate(response.data.dt * 1000);
   let weatherIcon = document.querySelector("#today-weather-emoji");
   weatherIcon.setAttribute(
     "src",
@@ -35,31 +73,12 @@ function changeFahrenheitTempValue(event) {
   tempValue.innerHTML = Math.round(fahrenheightTemperature);
 }
 
-function showCurrentLocationWeather(response) {
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = response.data.name.toUpperCase();
-  let temperature = Math.round(response.data.main.temp);
-  let tempValue = document.querySelector("#degrees");
-  tempValue.innerHTML = temperature;
-  let weatherDescription = document.querySelector("#today-temp-tag");
-  weatherDescription.innerHTML = response.data.weather[0].main;
-  let humidity = document.querySelector("#humidity-value");
-  humidity.innerHTML = response.data.main.humidity;
-  let windSpeed = document.querySelector("#wind-speed-value");
-  windSpeed.innerHTML = response.data.wind.speed;
-  let weatherIcon = document.querySelector("#today-weather-emoji");
-  weatherIcon.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-}
-
 function getAPILocation(position) {
   let apiKey = `eb9c72edfe9b2e4dc537230ab5404717`;
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
-  axios.get(apiURL).then(showCurrentLocationWeather);
+  axios.get(apiURL).then(displayTemperature);
 }
 
 function getLocation(event) {
@@ -70,7 +89,7 @@ function getLocation(event) {
 function search(city) {
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayCelciusTemp);
+  axios.get(apiUrl).then(displayTemperature);
 }
 
 function handleSubmit(event) {
@@ -79,49 +98,8 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-let currentDateTime = document.querySelector("#today-date");
-let now = new Date();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let weekDay = days[now.getDay()];
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-
-let month = months[now.getMonth()];
-let date = now.getDate();
-let year = now.getFullYear();
-let hour = now.getHours();
-if (hour < 10) {
-  hour = `0${hour}`;
-}
-let minute = now.getMinutes();
-if (minute < 10) {
-  minute = `0${minute}`;
-}
-currentDateTime.innerHTML = `${weekDay}  ${month}  ${date}  ${year}  ${hour}:${minute}`;
-
 let citySearch = document.querySelector("#city-form");
 citySearch.addEventListener("submit", handleSubmit);
-citySearch.addEventListener("submit", changeCityName);
 
 let celciusButton = document.querySelector("#celcius");
 celciusButton.addEventListener("click", changeCelciusTempValue);

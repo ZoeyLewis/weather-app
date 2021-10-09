@@ -25,6 +25,7 @@
   right: -25px;
 }
 
+#updated-date,
 #today-date,
 #today-temp,
 #today-temp-tag,
@@ -54,6 +55,11 @@
 #today-weather-emoji {
   position: relative;
   right: 15px;
+}
+
+#updated-date {
+  color: #006ec5;
+  font-size: 15px;
 }
 #today-date {
   color: #48aff6;
