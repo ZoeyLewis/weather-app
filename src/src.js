@@ -1,43 +1,3 @@
-let currentDateTime = document.querySelector("#today-date");
-let now = new Date();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let weekDay = days[now.getDay()];
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-
-let month = months[now.getMonth()];
-let date = now.getDate();
-let year = now.getFullYear();
-let hour = now.getHours();
-if (hour < 10) {
-  hour = `0${hour}`;
-}
-let minute = now.getMinutes();
-if (minute < 10) {
-  minute = `0${minute}`;
-}
-currentDateTime.innerHTML = `${weekDay}  ${month}  ${date}  ${year}  ${hour}:${minute}`;
-
 function changeCityName(event) {
   event.preventDefault();
   let searchValue = document.querySelector("#city-search-input");
@@ -91,16 +51,6 @@ function getFahrenheitWeatherAPI(event) {
   axios.get(apiURL).then(changeFahrenheitTempValue);
 }
 
-let citySearch = document.querySelector("#city-form");
-citySearch.addEventListener("submit", changeCityName);
-citySearch.addEventListener("submit", getCelciusWeatherAPI);
-
-let celciusButton = document.querySelector("#celcius");
-celciusButton.addEventListener("click", getCelciusWeatherAPI);
-
-let fahrenheightButton = document.querySelector("#fahrenheight");
-fahrenheightButton.addEventListener("click", getFahrenheitWeatherAPI);
-
 function showCurrentLocationWeather(response) {
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name.toUpperCase();
@@ -132,5 +82,56 @@ function getLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(getAPILocation);
 }
+
+let currentDateTime = document.querySelector("#today-date");
+let now = new Date();
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+let weekDay = days[now.getDay()];
+let months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+let month = months[now.getMonth()];
+let date = now.getDate();
+let year = now.getFullYear();
+let hour = now.getHours();
+if (hour < 10) {
+  hour = `0${hour}`;
+}
+let minute = now.getMinutes();
+if (minute < 10) {
+  minute = `0${minute}`;
+}
+currentDateTime.innerHTML = `${weekDay}  ${month}  ${date}  ${year}  ${hour}:${minute}`;
+
+let citySearch = document.querySelector("#city-form");
+citySearch.addEventListener("submit", changeCityName);
+citySearch.addEventListener("submit", getCelciusWeatherAPI);
+
+let celciusButton = document.querySelector("#celcius");
+celciusButton.addEventListener("click", getCelciusWeatherAPI);
+
+let fahrenheightButton = document.querySelector("#fahrenheight");
+fahrenheightButton.addEventListener("click", getFahrenheitWeatherAPI);
+
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", getLocation);
