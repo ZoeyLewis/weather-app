@@ -70,15 +70,21 @@
   font-size: 50px;
   font-weight: bold;
 }
-#today-temp-tag,
+
+#today-temp-tag {
+  color: #48aff6;
+  font-size: 20px;
+  position: relative;
+  top: -75px;
+}
+
 .humidity,
 .windSpeed {
   color: #68ccc5;
   font-size: 15px;
 }
 
-h1,
-.weeklyForecast {
+h1 {
   margin: auto;
   padding-top: 30px;
 }
@@ -86,6 +92,7 @@ h1,
   color: #006ec5;
   font-size: 25px;
   font-weight: bold;
+  margin: auto;
   position: relative;
   left: 70px;
   bottom: 50px;
