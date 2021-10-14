@@ -39,6 +39,28 @@ function formatDate(timestamp) {
   return `${weekDay}  ${month}  ${date}  ${year}  ${hour}:${minute}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#weekly-forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tues", "Wed"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <div class="col-2">
+    <div class="weekDay">${day}</div>
+    <i class="fas fa-cloud-sun"></i>
+    <div class="weeklyTemperature">
+      <span class="maxTemp"> 18° |</span>
+      <span class="minTemp"> 12° </span>
+    </div>
+  </div>
+`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayTemperature(response) {
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name.toUpperCase();
@@ -113,3 +135,4 @@ locationButton.addEventListener("click", getLocation);
 let celciusTemperature = null;
 
 search("New York");
+displayForecast();
