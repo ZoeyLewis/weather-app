@@ -55,7 +55,11 @@
         <span id="celcius">°C</span>
         <span id="degree-split">|</span>
         <span id="fahrenheight">°F</span>
-        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Clear" id="today-weather-emoji"></span>
+        <img
+          src="http://openweathermap.org/img/wn/10d@2x.png"
+          alt="Clear"
+          id="today-weather-emoji"
+        />
       </div>
       <div id="today-temp-tag">Cloudy with sunny spells</div>
       <span class="humidity"
@@ -64,69 +68,28 @@
       <span class="windSpeed">
         Wind: <span id="wind-speed-value">0.45</span>km/h</span
       >
-      <div class="weeklyForecast">Weekly Forecast:</div>
-
-      <div class="weekDays">
+      <div class="weeklyForecastTitle">Weekly Forecast:</div>
+      <div class="weeklyForecast">
         <div class="row">
-          <div class="col">Friday</div>
-          <div class="col">Saturday</div>
-          <div class="col">Sunday</div>
-          <div class="col">Monday</div>
-          <div class="col">Tuesday</div>
-          <div class="col">Wednesday</div>
-        </div>
-      </div>
-      <div class="weatherIcons">
-        <div class="row">
-          <div class="col">
+          <div class="col-2">
+            <div class="weekDay">Friday</div>
             <i class="fas fa-cloud-sun"></i>
-          </div>
-          <div class="col">
-            <i class="fas fa-cloud-sun"></i>
-          </div>
-          <div class="col">
-            <i class="fas fa-cloud-rain"></i>
-          </div>
-          <div class="col">
-            <i class="fas fa-cloud-sun"></i>
-          </div>
-          <div class="col">
-            <i class="fas fa-cloud-sun-rain"></i>
-          </div>
-          <div class="col">
-            <i class="fas fa-snowflake"></i>
+            <div class="weeklyTemperature">
+              <span class="maxTemp"> 18° |</span>
+              <span class="minTemp"> 12° </span>
+            </div>
           </div>
         </div>
       </div>
-      <div class="weeklyTemp">
-        <div class="row">
-          <div class="col">20°C</div>
-          <div class="col">20°C</div>
-          <div class="col">18°C</div>
-          <div class="col">19°C</div>
-          <div class="col">19°C</div>
-          <div class="col">13°C</div>
-        </div>
-      </div>
-      <div class="weeklyTags">
-        <div class="row">
-          <div class="col">Cloudy with sunny spells</div>
-          <div class="col">Cloudy with sunny spells</div>
-          <div class="col">Rain</div>
-          <div class="col">Cloudy with sunny spells</div>
-          <div class="col">Rain with sunny spells</div>
-          <div class="col">Frost</div>
-        </div>
-      </div>
+      <footer>
+        <a
+          href="https://github.com/ZoeyLewis/weather-app"
+          target="_blank"
+          class="openSourceFooter"
+          >Open-source code</a
+        >, by Zoey Lewis
+      </footer>
     </div>
-    <footer>
-      <a
-        href="https://github.com/ZoeyLewis/weather-app"
-        target="_blank"
-        class="openSourceFooter"
-        >Open-source code</a
-      >, by Zoey Lewis
-    </footer>
   </body>
   <script src="src/src.js"></script>
 </html>

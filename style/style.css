@@ -88,7 +88,7 @@ h1 {
   margin: auto;
   padding-top: 30px;
 }
-.weeklyForecast {
+.weeklyForecastTitle {
   color: #006ec5;
   font-size: 25px;
   font-weight: bold;
@@ -97,17 +97,16 @@ h1 {
   left: 70px;
   bottom: 50px;
 }
-.weekDays,
-.weatherIcons,
-.weeklyTemp,
-.weeklyTags {
-  margin: 0px 10px 0px 10px;
-  padding: 10px 20px;
+.weekDay,
+i,
+.weeklyTemperature {
+  margin: 0px 10px 10px 10px;
+  padding: 10px 10px;
   position: relative;
   bottom: 30px;
   text-align: center;
 }
-.weekDays {
+.weekDay {
   background: #d9edfd;
   border-style: solid;
   border-color: #48aff6;
@@ -115,6 +114,7 @@ h1 {
   border-width: 5px;
   color: #006ec5;
   font-weight: bold;
+  text-align: center;
 }
 .fas {
   border-style: solid;
@@ -125,14 +125,18 @@ h1 {
   font-size: 30px;
   padding: 20px;
 }
-.weeklyTemp {
+.maxTemp {
   color: #5a758e;
-  font-size: 25px;
+  font-size: 18px;
+  font-weight: bold;
 }
-.weeklyTags {
-  color: #48aff6;
-  font-size: 12px;
+.minTemp {
+  color: #5a758e;
+  font-size: 18px;
+  font-weight: lighter;
+  opacity: 60%;
 }
+
 body {
   margin: auto 200px auto 200px;
 }
