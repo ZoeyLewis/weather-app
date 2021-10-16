@@ -81,9 +81,9 @@ function getForecast(coordinates) {
 function displayTemperature(response) {
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name.toUpperCase();
-  celciusTemperature = Math.round(response.data.main.temp);
+  celsiusTemperature = Math.round(response.data.main.temp);
   let tempValue = document.querySelector("#degrees");
-  tempValue.innerHTML = celciusTemperature;
+  tempValue.innerHTML = celsiusTemperature;
   let weatherDescription = document.querySelector("#today-temp-tag");
   weatherDescription.innerHTML = response.data.weather[0].main;
   let humidity = document.querySelector("#humidity-value");
@@ -98,19 +98,6 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   getForecast(response.data.coord);
-}
-
-function changeCelciusTempValue(event) {
-  event.preventDefault();
-  let tempValue = document.querySelector("#degrees");
-  tempValue.innerHTML = celciusTemperature;
-}
-
-function changeFahrenheitTempValue(event) {
-  event.preventDefault();
-  let tempValue = document.querySelector("#degrees");
-  let fahrenheightTemperature = (celciusTemperature * 9) / 5 + 32;
-  tempValue.innerHTML = Math.round(fahrenheightTemperature);
 }
 
 function getAPILocation(position) {
@@ -141,15 +128,9 @@ function handleSubmit(event) {
 let citySearch = document.querySelector("#city-form");
 citySearch.addEventListener("submit", handleSubmit);
 
-let celciusButton = document.querySelector("#celcius");
-celciusButton.addEventListener("click", changeCelciusTempValue);
-
-let fahrenheightButton = document.querySelector("#fahrenheight");
-fahrenheightButton.addEventListener("click", changeFahrenheitTempValue);
-
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", getLocation);
 
-let celciusTemperature = null;
+let celsiusTemperature = null;
 
 search("New York");

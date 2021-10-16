@@ -36,20 +36,11 @@
   top: -60px;
 }
 
-#celcius,
-#degree-split,
-#fahrenheight {
+#celsius {
   font-size: 15px;
   position: relative;
   bottom: 25px;
   right: 10px;
-}
-
-#celcius:hover,
-#fahrenheight:hover {
-  cursor: pointer;
-  font-size: 18px;
-  text-decoration: underline;
 }
 
 #today-weather-emoji {
