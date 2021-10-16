@@ -4,6 +4,7 @@
   border-radius: 10px;
   border-width: 8px;
   font-family: "Saira", sans-serif;
+  height: 650px;
   margin: 0 auto;
   padding: 0px;
 }
@@ -88,6 +89,15 @@ h1 {
   left: 70px;
   bottom: 50px;
 }
+.weeklyForecastBackground {
+  background: #d9edfd;
+  border-style: solid;
+  border-color: #48aff6;
+  border-radius: 10px;
+  border-width: 5px;
+  height: 50px;
+  margin: 0px 5px;
+}
 .weekDay,
 i,
 .weeklyTemperature {
@@ -98,13 +108,10 @@ i,
   text-align: center;
 }
 .weekDay {
-  background: #d9edfd;
-  border-style: solid;
-  border-color: #48aff6;
-  border-radius: 10px;
-  border-width: 5px;
   color: #006ec5;
   font-weight: bold;
+  position: relative;
+  bottom: 47px;
   text-align: center;
 }
 .fas {
@@ -116,16 +123,25 @@ i,
   font-size: 30px;
   padding: 20px;
 }
+
+.forecastIcons {
+  position: relative;
+  bottom: 60px;
+}
 .maxTemp {
   color: #5a758e;
   font-size: 18px;
   font-weight: bold;
+  position: relative;
+  bottom: 50px;
 }
 .minTemp {
   color: #5a758e;
   font-size: 18px;
   font-weight: lighter;
   opacity: 60%;
+  position: relative;
+  bottom: 50px;
 }
 
 body {
@@ -139,10 +155,14 @@ h1 {
   position: relative;
   left: 60px;
 }
-footer,
+.footer,
 .openSourceFooter {
   color: #006ec5;
   font-family: "Saira", sans-serif;
+}
+.footer {
+  position: relative;
+  bottom: 30px;
 }
 .openSourceFooter:hover {
   color: #48aff6;

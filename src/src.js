@@ -42,7 +42,15 @@ function formatDate(timestamp) {
 function formatWeekDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  let weekDays = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+  let weekDays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
   return weekDays[day];
 }
 
@@ -57,7 +65,7 @@ function displayForecast(response) {
         `
   <div class="col-2">
     <div class="weekDay">${formatWeekDay(forecastDay.dt)}</div>
-    <img
+    <img class="forecastIcons"
     src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
   />
     <div class="weeklyTemperature">
